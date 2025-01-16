@@ -1,6 +1,7 @@
-import checkJwt from '../middleware/auth';
 import express from 'express';
 import TaskController from '../controllers/TaskController'
+import { checkJwt } from '../middleware/authMiddleware';
+
 const router = express.Router()
 
 router.get('/', checkJwt, TaskController.getAllTasks);
